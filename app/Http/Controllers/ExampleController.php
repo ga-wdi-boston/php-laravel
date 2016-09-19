@@ -3,22 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Example;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class ExampleController extends Controller
 {
-
-    public $examples = [
-      1 => [
-        'example_name' => 'Fun example.',
-        'example_details' => 'Pretend this is interesting.'
-      ],
-      2 => [
-        'example_name' => 'Another fun example.',
-        'example_details' => 'Seriously, please, pretend this is interesting.'
-      ]
-    ];
-
     /**
      * Get all examples
      *
@@ -26,7 +16,9 @@ class ExampleController extends Controller
      */
     public function index()
     {
-      return response()->json($this->examples);
+      $examples = Example::all();
+
+      return response()->json($examples);
     }
 
     /**
@@ -37,7 +29,8 @@ class ExampleController extends Controller
      */
     public function show($id)
     {
-        return response()->json($this->examples[$id]);
+      $example = Example::find($id);
+      return response()->json($example);
     }
 
     /**
@@ -45,8 +38,14 @@ class ExampleController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(Request $request)
     {
+      $example = new Example;
+
+      $example->title = $request->title;
+      $example->body = $request->body;
+
+      $example->save();
     }
 
     /**
@@ -55,8 +54,19 @@ class ExampleController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update(Request $request, $id)
     {
+      $example = Example::find($id);
+
+      if($request->title) {
+        $example->title = $request->title;
+      }
+
+      if($request->body) {
+        $example->body = $request->body;
+      }
+
+      $example->save();
     }
 
     /**
@@ -67,5 +77,6 @@ class ExampleController extends Controller
      */
     public function destroy($id)
     {
+      Example::destroy($id);
     }
 }
