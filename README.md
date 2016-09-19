@@ -20,9 +20,8 @@ By the end of this, developers should be able to:
 1.  [Fork and clone](https://github.com/ga-wdi-boston/meta/wiki/ForkAndClone)
     this repository.
 1.  Create a new branch, `training`, for your work.
-1.  Install dependencies with `composer install.`
-1.  Create Homestead.yaml file with `php vendor/bin/homestead make`.
-1.  Ensure Vagrant is running with `vagrant up`
+1.  Install dependencies with `composer install`.
+1.  Ensure Vagrant is running from `~/Homestead` by running `vagrant up` there.
 1.  Navigate to [http://homestead.app](http://homestead.app) to check out the fresh installation.
 
 ## Getting Acquainted with Laravel
