@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/examples', 'ExampleController@index');
+// Route::get('/examples/{id}', 'ExampleController@show');
+
+Route::resource('examples', 'ExampleController');

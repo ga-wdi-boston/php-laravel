@@ -26,6 +26,33 @@ By the end of this, developers should be able to:
 
 ## Getting Acquainted with Laravel
 
+### Routes
+
+[Routes](https://laravel.com/docs/5.3/routing) are saved in the root `routes/`
+directory. While it looks like it would make sense to save our routes to
+ [`routes/api.php`](routes/api.php), we'll actually be saving to
+[`routes/web.php`](routes/web.php).
+
+Similar to Rails, a single route can be declared as such:
+
+```php
+Route::get('/examples', 'ExampleController@index');
+Route::get('/examples/{id}', 'ExampleController@show');
+```
+
+In addition, restful resource routes can be declared as:
+
+```php
+Route::resource('examples', 'ExampleController');
+```
+
+Two things to note:
+
+1.  For the first time, we're seeing route params wrapped in `{}`, rather than
+preceded by a `:` (`/{id}` vs `/:id`). These params are sent to your controller
+as an argument, rather than as part of a `params` object.
+1.  `ExampleController@index` is the Laravel equivialent of Rails'
+ `examples#index`.
 
 ## Additional Resources
 
