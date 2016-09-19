@@ -26,6 +26,34 @@ By the end of this, developers should be able to:
 
 ## Getting Acquainted with Laravel
 
+### Migrations and Models
+
+To create a database table for `examples`, we'd run to generate a migration:
+
+```bash
+php artisan make:migration create_table_examples --create="examples"
+```
+
+This migration can then be configured to add approporiate columns. I've added
+`title` and `body` on top of what was generated for us.
+
+We then run our migrations (just like in Rails!) using:
+
+```bash
+php artisan migrate
+```
+
+Then, to create a corresponding Model, we'd run:
+
+```bash
+php artisan make:model Example
+```
+
+Note that this model file exists in the root of the `Http/` directory.
+
+Similar to Rails, if there existed a relationship between models, we'd express
+that in the Model file.
+
 ### Routes
 
 [Routes](https://laravel.com/docs/5.3/routing) are saved in the root `routes/`
