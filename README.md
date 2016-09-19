@@ -37,9 +37,13 @@ php artisan make:migration create_table_examples --create="examples"
 This migration can then be configured to add approporiate columns. I've added
 `title` and `body` on top of what was generated for us.
 
-We then run our migrations (just like in Rails!) using:
+We then run our migrations (just like in Rails!), except our DB lives on a
+virtual machine. Let's `ssh` onto the box and run our migrations.
 
 ```bash
+cd ~/Homestead
+vagrant ssh
+cd Code/
 php artisan migrate
 ```
 
