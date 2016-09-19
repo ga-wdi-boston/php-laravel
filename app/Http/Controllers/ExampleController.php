@@ -39,4 +39,33 @@ class ExampleController extends Controller
     {
         return response()->json($this->examples[$id]);
     }
+
+    /**
+     * Creates single example.
+     *
+     * @return Response
+     */
+    public function store()
+    {
+    }
+
+    /**
+     * Update single example by ID.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function update($id)
+    {
+    }
+
+    /**
+     * Destroy single example by ID.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+    }
 }

@@ -54,6 +54,26 @@ as an argument, rather than as part of a `params` object.
 1.  `ExampleController@index` is the Laravel equivialent of Rails'
  `examples#index`.
 
+### Controllers
+
+[Controllers](https://laravel.com/docs/5.3/controllers) are very similar to
+Rails controllers in functionality, but have plenty of their own extras.
+
+Let's take a look at our `ExampleController` (app/Http/Controllers/ExampleController.php).
+
+FAQS:
+
+1.  What's that namespace?
+> Laravel's wiring requires files in the `app/` directory to be namespaced. All
+> this requires of you is to properly path from the root of your repository to
+> your controller's class name.
+
+1.  What's `use`?
+>  This allows you to incorporate other PHP classes into your new class.
+
+Since we're building a RESTful API, we'll almost always be returning JSON to
+our client. Check out more on Laravel reponse types [here](https://laravel.com/docs/5.3/responses#other-response-types).
+
 ## Additional Resources
 
 -  [PHP Docs](http://php.net/manual/en/)
