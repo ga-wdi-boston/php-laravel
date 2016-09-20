@@ -37,6 +37,8 @@ php artisan make:migration create_table_examples --create="examples"
 This migration can then be configured to add approporiate columns. I've added
 `title` and `body` on top of what was generated for us.
 
+Feel free to look deeper into [Laravel's table column types](https://laravel.com/docs/5.3/migrations).
+
 #### Quick Aside `->` vs `=>` in PHP
 
 ##### `->`
@@ -118,6 +120,12 @@ FAQS:
 
 Since we're building a RESTful API, we'll almost always be returning JSON to
 our client. Check out more on Laravel reponse types [here](https://laravel.com/docs/5.3/responses#other-response-types).
+
+## Code Along: Create New Resource
+
+Let's set up our API to handle requests for a an `Ideas` resource. We'll use
+it to store ideas for web apps we could build. These ideas should have
+`title`, `description` and `completed` properties.
 
 ## Additional Resources
 
