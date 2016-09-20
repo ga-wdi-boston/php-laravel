@@ -24,7 +24,7 @@ By the end of this, developers should be able to:
 1.  Ensure Vagrant is running from `~/Homestead` by running `vagrant up` there.
 1.  Navigate to [http://homestead.app](http://homestead.app) to check out the fresh installation.
 
-## Getting Acquainted with Laravel
+## Let's Get Acquainted with Laravel
 
 ### Migrations and Models
 
@@ -36,6 +36,19 @@ php artisan make:migration create_table_examples --create="examples"
 
 This migration can then be configured to add approporiate columns. I've added
 `title` and `body` on top of what was generated for us.
+
+#### Quick Aside `->` vs `=>` in PHP
+
+##### `->`
+
+Used for object accessing in PHP. It is not often that you will create an
+object other than classes. Aside from classes, other objects you'll often
+interact with are `$tables`s in your migration files.
+
+##### `=>`
+
+Used to set up association with key/value pairs in PHP arrays, just as we'd
+been seeing.
 
 We then run our migrations (just like in Rails!), except our DB lives on a
 virtual machine. Let's `ssh` onto the box and run our migrations.
