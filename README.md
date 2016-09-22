@@ -21,6 +21,8 @@ By the end of this, developers should be able to:
     this repository.
 1.  Create a new branch, `training`, for your work.
 1.  Install dependencies with `composer install`.
+1.  Create your `.env` file with `mv .env.example .env` from the command line.
+1.  Generate your environment's secret key with `php artisan key:generate`.
 1.  Ensure Vagrant is running from `~/Homestead` by running `vagrant up` there.
 1.  Navigate to [http://homestead.app](http://homestead.app) to check out the fresh installation.
 
